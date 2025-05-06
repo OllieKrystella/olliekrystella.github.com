@@ -46,14 +46,16 @@
       }
 
       .icon:hover {
-        background: #979797;
+        background: #e3e3e3;
         border-radius: 10px;
       }
     </style>
   </head>
   <body>
     <div style="margin: 1rem;">
-      <img title="X (Twitter)" data-mgn-sub="X / Twitter" class="icon" src="/assets/icons/X-icon.svg" onclick="window.mgn.Open.url('https://x.com/OllieKrystella')">
+      <h4>Follow my socials!</h4>
+      <img title="X (Twitter)" data-mgn-sub="X / Twitter" class="icon" src="/assets/icons/X-icon.svg" onclick="window.mgn.Open.url('https://x.com/OllieKrystella', true)">
+      <img title="YouTube" data-mgn-sub="YouTube" class="icon" src="/assets/icons/youtube.svg" onclick="window.mgn.Open.url('https://youtube.com/@OllieKrystellaYT', true)">
     </div>
 
     <script>
@@ -61,8 +63,12 @@
         'use strict';
 
         class Open {
-          static url(path) {
-            document.location.href = path;
+          static url(path, bnew = false) {
+            if (bnew) {
+              window.open(path);
+            } else {
+              document.location.href = path;
+            }
           }
         }
 
